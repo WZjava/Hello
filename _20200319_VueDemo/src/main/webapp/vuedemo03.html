@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定v-on:keydown</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+
+
+
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <input type="text" v-on:keydown="funkeydown($event)">
+
+    </div>
+
+    <script>
+
+
+        // document.getElementById("app").innerHTML="hello Vue.js";
+        new Vue({
+            el:'#app',
+            data:{
+                message:"Hello Vue.js"
+
+            },
+            methods:{
+                funkeydown:function (event) {
+                    var keycode = event.keyCode;
+                    if (keycode < 48 || keycode >57){
+                        event.preventDefault();
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

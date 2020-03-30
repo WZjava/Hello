@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+
+
+
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <form action="https://www.baidu.com" method="post" @submit.prevent>
+            <input type="submit" value="提交">
+        </form>
+
+        <input type="text" @keydown.enter="funEnter">
+
+    </div>
+
+    <script>
+
+
+        // document.getElementById("app").innerHTML="hello Vue.js";
+        new Vue({
+            el:'#app',
+            data:{
+                message:"Hello Vue.js"
+
+            },
+            methods:{
+                funEnter:function () {
+                    alert("摁下的是回车键")
+                }
+
+            }
+        });
+
+    </script>
+</body>
+</html>

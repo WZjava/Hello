@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定v-on:click</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+
+
+
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <input type="button" v-on:click="funClick()" value="v-on">
+        <button v-on:click="funClick()">按钮v-on:click</button>
+        <button @click="funClickParam('你好Vue.js')">按钮@click</button>
+
+    </div>
+
+    <script>
+        // document.getElementById("app").innerHTML="hello Vue.js";
+        new Vue({
+            el:'#app',
+            data:{
+                message:"Hello Vue.js",
+                username:"路飞",
+                age:20
+            },
+            methods:{
+                funClick:function () {
+                    alert("按钮点击")
+                },
+                funClickParam:function (str) {
+                    this.message = str;
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定v-on:mousemove</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+
+
+
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <div style="width: 200px;height: 200px;background: green" v-on:mousemove="funmousemove()"></div>
+
+    </div>
+
+    <script>
+
+
+        // document.getElementById("app").innerHTML="hello Vue.js";
+        new Vue({
+            el:'#app',
+            data:{
+                message:"Hello Vue.js"
+
+            },
+            methods:{
+                funmousemove:function () {
+                    alert("鼠标移动")
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
